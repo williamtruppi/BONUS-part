@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- apro CONTAINER -->
+  <div class="container">
+
+    
+    <div class="insert_box">
+      
+      <!-- logo -->
+      <img src="assets/img/camera-cafe.jpg" alt="">
+
+      <!-- inserimento task -->
+      <div class="insert_task">
+        <input id="pippo" type="text" v-on:keyup.enter="printTaskGiornaliere">
+        <button @click="printTaskGiornaliere(taskGiornaliere)">aggiungi task</button>
+      </div>
+  
+      <!-- lista task -->
+      <div class="task_box">
+  
+        <h3>Cosa fare oggi in ufficio???</h3>
+  
+        <!--  -->
+        <div class="task_list">
+          <ul>
+            <li v-for="(task,i) in taskGiornaliere">
+              {{taskGiornaliere[i]}} <i class="fas fa-times-circle" @click="cancelTask(i)"></i>
+            </li>
+            <p v-if="taskGiornaliere.length < 1"> Non ci sono più cose da fare per oggi! </p>
+          </ul>
+        </div>
+        <!--  -->
+      </div>
+      <!-- lista task -->
+    </div>
+
+    </div>
+  <!-- chiudo CONTAINER -->
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
