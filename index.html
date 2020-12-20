@@ -33,7 +33,9 @@
         <div class="task_list">
           <ul>
             <li v-for="(task,i) in taskGiornaliere">
-              {{taskGiornaliere[i]}} <i class="fas fa-times-circle" @click="cancelTask(i)"></i>
+              {{taskGiornaliere[i]}} 
+              <i class="fas fa-pen-square"></i>
+              <i class="fas fa-times-circle" @click="cancelTask(i)"></i>
             </li>
             <p v-if="taskGiornaliere.length < 1"> Non ci sono più cose da fare per oggi! </p>
           </ul>
@@ -41,6 +43,13 @@
         <!--  -->
       </div>
       <!-- lista task -->
+    </div>
+
+    <div class="eliminated_tasks">
+      <h3>task eliminate</h3>
+      <ul>
+        <li v-for="(task,i) in eliminatedTask"> {{eliminatedTask[i]}} </li>
+      </ul>
     </div>
 
     </div>

@@ -50,3 +50,7 @@ ul > li{
   background-color: thistle;
   border: 1px solid black;
 }
+
+.eliminated_tasks{
+  background-color: teal;
+}
