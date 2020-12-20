@@ -33,6 +33,7 @@
         <div class="task_list">
           <ul>
             <li v-for="(task,i) in taskGiornaliere">
+              <input type="checkbox" @click="completeTask(i)">
               {{taskGiornaliere[i]}} 
               <i class="fas fa-pen-square"></i>
               <i class="fas fa-times-circle" @click="cancelTask(i)"></i>
@@ -48,10 +49,20 @@
     <div class="eliminated_tasks">
       <h3>task eliminate</h3>
       <ul>
-        <li v-for="(task,i) in eliminatedTask"> {{eliminatedTask[i]}} </li>
+        <li v-for="(task,i) in eliminatedTask"> 
+          {{eliminatedTask[i]}} 
+          <i class="fas fa-redo" @click="restoreTask(i)"></i>
+        </li>
       </ul>
 
       <button @click="deleteAllTasks">cancella tutto</button>
+    </div>
+
+    <div class="completed_tasks">
+      <h3>task completate</h3>
+      <ul>
+        <li v-for="(task,i) in completedTask"> {{completedTask[i]}} </li>
+      </ul>
     </div>
 
     </div>
